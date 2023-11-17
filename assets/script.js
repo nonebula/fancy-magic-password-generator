@@ -90,13 +90,23 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
-
-//steps:
 //1. prompt to get user input for password
+var passLength = prompt("Enter the length of your password (between 8 and 128 characters");
+if (passLength < 8 || passLength > 128 || isNaN(passLength)) {
+  alert("Invalid password length. Please enter a number between 8 and 128.");
+  return;
+}
 //2. use confirm to ask whether to include others
+var incLowerCase = confirm("Include lowercase characters?");
+var incUpperCase = confirm("Include uppercase characters?");
+var incNumber = confirm("Include numerical characters?");
+var incSpecials = confirm("Include special characters?");
 //3. validate user input (at least one character type selected)
 //4. return object containing user's chosen option/s
+if (!incLowerCase && !incUpperCase && !incNumber && !incSpecials){
+  alert("Please select at least one character type.");
+  return;
+}
 }
 
 // Function for getting a random element from an array
@@ -110,15 +120,15 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
 //steps:
 //1. call getPasswordOptions to get the user's chosen options
+getPasswordOptions();
 //2. based on choices, concatenate the selected character arrays into a single array
 //3. use a loop to generate a password of the specified length, randomly selecting characters from the array
 //4. return the generated password.
 }
 
-// Get references to the #generate element
+// Get references to the #generate element all this below = done
 var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
