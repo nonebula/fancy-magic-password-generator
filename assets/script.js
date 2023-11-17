@@ -138,6 +138,11 @@ function generatePassword() {
 //1. call getPasswordOptions to get the user's chosen options
 getPasswordOptions();
 //2. based on choices, concatenate the selected character arrays into a single array
+var password = "";
+for (var i = 0; i < length; i++) {
+  var randomIndex = Math.floor(Math.random() * allCharacters.length);
+  password+= allCharacters.getRandom(arr);
+}
 //3. use a loop to generate a password of the specified length, randomly selecting characters from the array
 //4. return the generated password.
 }
