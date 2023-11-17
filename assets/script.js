@@ -102,12 +102,26 @@ var incUpperCase = confirm("Include uppercase characters?");
 var incNumber = confirm("Include numerical characters?");
 var incSpecials = confirm("Include special characters?");
 //3. validate user input (at least one character type selected)
-//4. return object containing user's chosen option/s
 if (!incLowerCase && !incUpperCase && !incNumber && !incSpecials){
   alert("Please select at least one character type.");
   return;
 }
+//4. return object containing user's chosen options
+var allCharacters = "";
+if (incLowerCase) {
+  allCharacters += incLowerCase;
 }
+if (incUpperCase) {
+  allCharacters += incUpperCase;
+}
+if (incNumber) {
+  allCharacters += incNumber;
+}
+if (incSpecials) {
+  allCharacters += incSpecials;
+}
+}
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
