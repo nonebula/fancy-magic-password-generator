@@ -109,16 +109,16 @@ if (!incLowerCase && !incUpperCase && !incNumber && !incSpecials){
 //4. return object containing user's chosen options
 var allCharacters = "";
 if (incLowerCase) {
-  allCharacters += incLowerCase;
+  allCharacters += lowerCasedCharacters;
 }
 if (incUpperCase) {
-  allCharacters += incUpperCase;
+  allCharacters += upperCasedCharacters;
 }
 if (incNumber) {
-  allCharacters += incNumber;
+  allCharacters += numericCharacters;
 }
 if (incSpecials) {
-  allCharacters += incSpecials;
+  allCharacters += specialCharacters;
 }
 }
 
