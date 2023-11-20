@@ -120,6 +120,7 @@ if (incNumber) {
 if (incSpecials) {
   allCharacters += specialCharacters;
 }
+return allCharacters;
 }
 
 
