@@ -107,28 +107,24 @@ if (!incLowerCase && !incUpperCase && !incNumber && !incSpecials){
   return;
 }
 //4. return object containing user's chosen options
-var allCharacters = "";
-if (incLowerCase) {
-  allCharacters += lowerCasedCharacters;
+return {
+  length: passLength,
+  includeLowercase: incLowerCase,
+  includeUppercase: incUpperCase,
+  includeNumbers: incNumber,
+  includeSpecials: incSpecials
+};
 }
-if (incUpperCase) {
-  allCharacters += upperCasedCharacters;
-}
-if (incNumber) {
-  allCharacters += numericCharacters;
-}
-if (incSpecials) {
-  allCharacters += specialCharacters;
-}
-return allCharacters;
-}
-
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  var randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
 
 //steps:
 //1. take an array as an argument and return random element from that array
+allCharacters
 //2. use Math.random() to generate random index within array length
 //3. return element at randomly generated index
 }
