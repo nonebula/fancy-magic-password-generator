@@ -118,16 +118,14 @@ return {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
+  // Check if the array is empty
+  if (arr.length === 0) {
+    return null;
+  }
+
   var randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
-
-//steps:
-//1. take an array as an argument and return random element from that array
-allCharacters
-//2. use Math.random() to generate random index within array length
-//3. return element at randomly generated index
-
 
 // Function to generate password with user input
 function generatePassword() {
@@ -138,8 +136,10 @@ if (!options) {
 // If options are not valid, return an empty string
       return '';
     }
+
+    var allCharacters = '';
+
 //2. based on choices, concatenate the selected character arrays into a single array
-var allCharacters = '';
   if (options.includeLowercase) {
     allCharacters += lowerCasedCharacters.join('');
   }
